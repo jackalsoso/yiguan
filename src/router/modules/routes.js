@@ -1,12 +1,12 @@
-import activityHome from '@/pages/teacherActivity/home/index'
+import login from '@/pages/login/index'
 
 const routes = [
   {
-    path: '/activityHome',
-    name: 'activityHome',
-    component: activityHome,
+    path: '/',
+    name: 'login',
+    component: login,
     meta: {
-      title: '师资活动',
+      title: '启动页',
       keepAlive: false
     }
   },

@@ -62,15 +62,15 @@ module.exports = {
     https: false,
     hotOnly: false,
     // http 代理配置
-    proxy: {
-      '/api': {
-        target: '',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    },
+    // proxy: {
+    //   '/api': {
+    //     target: '',
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // },
   },
   // 第三方插件配置
   pluginOptions: {
