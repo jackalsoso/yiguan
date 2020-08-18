@@ -39,7 +39,7 @@ module.exports = {
       postcss: {
         plugins:[
            require('postcss-px2rem')({
-              remUnit: 32,
+              remUnit: 37.5,
               propList: ['*'],
               //exclude: '/node_modules|vant/i',
               minPixelValue: 3, //设置要替换的最小像素值(3px会被转rem)。 默认 0
@@ -64,7 +64,7 @@ module.exports = {
     // http 代理配置
     proxy: {
       '/api': {
-        target: 'http://shidu.nx.021dr.cn/api.php',
+        target: '',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
