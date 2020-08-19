@@ -10,6 +10,33 @@ const routes = [
       keepAlive: false
     }
   },
+  {
+    path: '/gallery',
+    name: 'gallery',
+    component: () => import('@/pages/gallery/index'),
+    meta: {
+      title: '选择画廊',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/pages/search/index'),
+    meta: {
+      title: '搜索',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/gallery/:id',
+    name: 'galleryDetail',
+    component: () => import('@/pages/galleryDetail/index'),
+    meta: {
+      title: '画廊',
+      keepAlive: false
+    }
+  },
 
 
 

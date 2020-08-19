@@ -82,4 +82,50 @@
     padding: 15px;
     box-sizing: border-box;
   }
+  .content{
+    .search-warp{
+      height: 70px;
+      .search{
+        width: 100%;
+        height: auto;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        background-color: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        .back{
+          width: 10px;
+          height: 17px;
+          margin-right: 30px;
+        }
+        .input{
+          width:262px;
+          height:28px;
+          border:1px solid rgba(61,66,73,1);
+          border-radius:14px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          padding: 0 12px;
+          img{
+            width: 13px;
+            height: 12px;
+          }
+          input{
+            width: 230px;
+            height: 100%;
+            border: none;
+            background: none;
+            border-radius:14px;
+            font-size: 12px;
+            color: #CBD2D9;
+          }
+        }
+      }
+    }
+  }
 </style>

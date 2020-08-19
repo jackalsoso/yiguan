@@ -1,11 +1,11 @@
 <template>
-  <div class="login">
+  <div class="content">
     <div class="center">
         <img class="start" src="@/static/img/start-img.png" alt="">
         <span>打开乙观&nbsp;&nbsp;&nbsp;发现美好</span>
         <div class="yl" :class="tab==0? 'active' : '' " @click="tab=0">游览</div>
         <div class="yl cz" :class="tab==1? 'active' : '' " @click="tab=1">自由创作</div>
-        <img class="goin" src="@/static/img/goin.png" alt="">
+        <img class="goin" src="@/static/img/goin.png" alt="" @click="$router.push('/gallery')">
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .login{
+  .content{
     width: 100%;
     height: 100%;
     background: url(../../static/img/login-bg.jpg) center / cover no-repeat;
