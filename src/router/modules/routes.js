@@ -37,6 +37,15 @@ const routes = [
       keepAlive: false
     }
   },
+  {
+    path: '/upload',
+    name: 'upload',
+    component: () => import('@/pages/upload/index'),
+    meta: {
+      title: '上传作品',
+      keepAlive: false
+    }
+  },
 
 
 
