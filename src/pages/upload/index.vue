@@ -2,15 +2,15 @@
   <div class="content">
     <div class="nav-wrap">
       <div class="nav">
-        <img src="@/static/img/back-icon.png" alt="" class="back">
+        <img src="@/static/img/back-icon.png" alt="" class="back" @click="$router.back(-1)">
         <span>上传作品</span>
-        <img src="@/static/img/set.png" alt="" class="set" >
+        <img src="@/static/img/set.png" alt="" class="set" @click="openSet" >
       </div>
     </div>
     <div class="hint-wrap">
       <div class="hint">
         <span>每次最多上传<i>6</i>/40张，单张文件不超过30MB</span>
-        <img src="@/static/img/select-hl.png" alt="">
+        <img src="@/static/img/select-hl.png" alt="" @click="$router.push('/batchDel')" >
       </div>
     </div>
     <div class="list" v-for="v in 12" :key="v">
@@ -21,7 +21,7 @@
         <div class="o">
           <span class="l"><i>标题：</i><a>红至高</a></span>
           <span class="r">
-            <img src="@/static/img/u-edit.png" alt="">
+            <img src="@/static/img/u-edit.png" alt="" @click="$router.push('/productEdit')">
             <img src="@/static/img/u-del.png" alt="">
           </span>
         </div>
@@ -37,15 +37,60 @@
       </div>
     </div>
     <div class="submit-but">
-      <span>
+      <span @click="addImg">
         <img src="@/static/img/add-bt.png" alt="">
         <i>继续添加</i>
       </span>
-      <span>
+      <span @click="isShowProgress = true">
         <img src="@/static/img/up-t.png" alt="">
         <i>确认上传</i>
       </span>
     </div>
+    <!-- 继续添加 -->
+    <div class="addPop" v-if="isShowAdd" :class="{'active': isAddActive}" @click.self="closeAddPop">
+      <div class="bottom">
+        <div class="options">
+          <span>现场拍照</span>
+          <span>相册选择</span>
+          <span>......</span>
+        </div>
+        <div class="button" @click.stop="closeAddPop">
+          <span class="cancel">取消</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 设置 -->
+    <div class="addPop" v-if="isShowSet" :class="{'active': isSetActive}" @click.self="closeSetPop">
+      <div class="bottom">
+        <div class="options">
+          <span>设置画框尺寸（cm）</span>
+          <span v-for="v in sizeList" :key="v.id">
+            <i>{{v.size}}</i>
+            <img class="icon" src="@/static/img/gouxuan.png" alt="" v-show="tabId == v.id"> 
+            <img class="icon" src="@/static/img/no-gouxuan.png" alt="" v-show="tabId !== v.id" @click="tabId = v.id" >
+          </span>
+        </div>
+        <div class="button" @click.stop="closeSetPop">
+          <span class="cf">确认</span>
+          <span class="cf">取消</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 确认上传 -->
+    <div class="addPop" v-if="isShowProgress">
+      <div class="progress">
+        <img src="@/static/img/jindu-logo.png" alt="">
+        <div class="hint">作品上传中...</div>
+        <van-progress
+          :percentage="75"
+          show-pivot="false"
+          color="#F2630D"
+        />
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -54,13 +99,49 @@ export default {
   name: 'upload',
   data(){
     return{
-
+      isShowProgress: false,
+      isShowAdd: false,
+      isAddActive: false,
+      isShowSet: false,
+      isSetActive: false,
+      tabId: 0,
+      sizeList: [
+        { id:1, size: '81×60'},{ id:2, size: '100×81'},{ id:3, size: '146×97'},{ id:4, size: '162×130'},
+      ],
     }
   },
   created(){
 
   },
   methods:{
+    // 打开添加弹窗
+    addImg(){
+      this.isShowAdd = true;
+      setTimeout(() => {
+        this.isAddActive = true;
+      },50);
+    },
+    // 关闭添加弹窗
+    closeAddPop(){
+      this.isAddActive = false;
+      setTimeout(() => {
+        this.isShowAdd = false;
+      },500);
+    },
+    // 打开设置弹窗
+    openSet(){
+      this.isShowSet = true;
+      setTimeout(() => {
+        this.isSetActive = true;
+      },50);
+    },
+    // 关闭设置弹窗
+    closeSetPop(){
+      this.isSetActive = false;
+      setTimeout(() => {
+        this.isShowSet = false;
+      },500);
+    },
 
   }
 }
@@ -240,6 +321,29 @@ export default {
             color: #fff;
           }
         }
+      }
+    }
+    .addPop{
+      .progress{
+        width: 275px;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        img{
+          display: block;
+          width: 58px;
+          height: 46px;
+          margin: 0 auto 12px;
+        }
+        .hint{
+          font-size: 16px;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+
       }
     }
   }

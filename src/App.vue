@@ -82,6 +82,19 @@
     padding: 15px;
     box-sizing: border-box;
   }
+  // van样式修改
+  // .van-picker__columns{
+  //   height: 264px !important;
+  // }
+  // .van-picker-column__item{
+  //   height: 44px !important;
+  // }
+  // .van-picker__mask{
+  //   background-size: 100% 110px !important;
+  // }
+  // .van-picker__frame{
+  //   height: 44px !important;
+  // }
   .content{
     .search-warp{
       height: 70px;
@@ -123,6 +136,149 @@
             border-radius:14px;
             font-size: 12px;
             color: #CBD2D9;
+          }
+        }
+      }
+    }
+    .addPop{
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      .bottom{
+        width: 360px;
+        height: auto;
+        position: fixed;
+        left: 50%;
+        bottom: 45px;
+        transform: translate(-50%,0);
+        transform: translate(-50%,200%);
+        transition: all .5s;
+        .options{
+          border-radius: 14px;
+          background-color: #fff;
+          margin-bottom: 10px;
+          span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #DEDEDE;
+            font-size: 16px;
+            color: #000;
+            &:last-child{
+              border-bottom: none; 
+            }
+            i{
+              width: 110px;
+            }
+            .icon{
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+      }
+      &.active{
+        .bottom{
+          transform: translate(-50%,0);
+        }
+      }
+      .button{
+        border-radius: 14px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        .cancel{
+          width: 100%;
+          padding: 15px 0;
+          font-size: 16px;
+          color: #007AFF;
+          text-align: center;
+        }
+        .cf{
+          width: 50%;
+          padding: 15px 0;
+          font-size: 16px;
+          color: #007AFF;
+          text-align: center;
+          &:first-child{
+            border-right: 1px solid #DEDEDE; 
+          }
+        }
+      }
+    }
+    .edit{
+      padding-bottom: 100px;
+      .img{
+        padding: 15px 0;
+        border-bottom: 1px solid #DEDEDE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+          width: 128px;
+          height: 172px;
+        }
+      }
+      .options-wrap{
+        padding: 0 15px;
+        .options{
+          padding: 24px 0 12px;
+          border-bottom: 1px solid #DEDEDE;
+          display: flex;
+          align-items: center;
+          .tit{
+            width: 85px;
+            font-size: 14px;
+            color: #999;
+          }
+          .make{
+            width: 254px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            .upload-file{
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              opacity: 0;
+              /deep/ .van-uploader__upload{
+                width: 254px;
+                height: 20px;
+              }
+            }
+            input{
+              width: 100%;
+              border: none;
+              background: none;
+              font-size: 14px;
+              color: #000;
+              padding: 0;
+            }
+            span{
+              font-size: 14px;
+              color: #000;
+              margin-right: 12px;
+            }
+            .img1{
+              width: 7px;
+              height: 7px;
+            }
+            .img2{
+              width: 16px;
+              height: 16px;
+              margin-right: 12px;
+            }
+            i{
+              color: #999;
+              font-size: 11px;
+            }
           }
         }
       }

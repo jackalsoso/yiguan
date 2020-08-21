@@ -46,6 +46,70 @@ const routes = [
       keepAlive: false
     }
   },
+  {
+    path: '/batchDel',
+    name: 'batchDel',
+    component: () => import('@/pages/upload/batchDel'),
+    meta: {
+      title: '批量删除',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/productEdit',
+    name: 'productEdit',
+    component: () => import('@/pages/upload/edit'),
+    meta: {
+      title: '画作编辑',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/showGallery',
+    name: 'showGallery',
+    component: () => import('@/pages/showGallery/index'),
+    meta: {
+      title: '上传的画廊',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/editDetail',
+    name: 'editDetail',
+    component: () => import('@/pages/editDetail/index'),
+    meta: {
+      title: '编辑详情',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/publishLink',
+    name: 'publishLink',
+    component: () => import('@/pages/publishLink/index'),
+    meta: {
+      title: '发布链接',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/publishSuccess',
+    name: 'publishSuccess',
+    component: () => import('@/pages/publishSuccess/index'),
+    meta: {
+      title: '发布链接成功',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/browse',
+    name: 'browse',
+    component: () => import('@/pages/browse/index'),
+    meta: {
+      title: '正常浏览',
+      keepAlive: false
+    }
+  },
+  
 
 
 

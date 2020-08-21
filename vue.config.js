@@ -35,18 +35,11 @@ module.exports = {
     // 是否开启 CSS source maps
     sourceMap: false,
     // css预设器配置项
-    loaderOptions: {
-      postcss: {
-        plugins:[
-           require('postcss-px2rem')({
-              remUnit: 37.5,
-              propList: ['*'],
-              //exclude: '/node_modules|vant/i',
-              minPixelValue: 3, //设置要替换的最小像素值(3px会被转rem)。 默认 0
-           })
-        ]
-      }
-    },
+    // loaderOptions: {
+    //   postcss: {
+       
+    //   }
+    // },
     // 是否启用 CSS modules for all css / pre-processor files.
     modules: false
   },
