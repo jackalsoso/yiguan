@@ -8,7 +8,7 @@
     </div>
 
     <div class="popup-bottom">
-      <div class="pop-type" :class="isShowBz? 'mb' : '' ">
+      <div class="pop-type">
         <div class="tit" @click="isShowHk = !isShowHk,isShowBz = false"><span></span><span></span></div>
         <div class="type">画框类别</div>
         <div class="choose" v-if="isShowHk">
@@ -89,13 +89,9 @@ export default {
       bottom: 0;
       left: 0;
       z-index: 10000;
+      background: #fff;
       .pop-type{
-        background: #fff;
         border-radius:14px 14px 0px 0px;
-        padding-bottom: 50px;
-        &.mb{
-          padding-bottom: 80px;
-        }
         .tit{
           padding: 5px 20px;
           border-bottom: 1px dashed #CBD1D9;
@@ -119,13 +115,20 @@ export default {
         .choose{
           padding: 0 28px 30px;
           display: flex;
-          align-items: center;
           flex-wrap: wrap;
           label{
+            width: 65px;
             text-align: center;
             font-size: 14px;
             color: #000;
-            margin-right: 12px;
+            margin-right: 10px;
+          }
+          /deep/ .van-radio-group--horizontal{
+            width: 240px;
+          }
+          /deep/ .van-radio--horizontal{
+            margin-right: 30px;
+            margin-bottom: 12px;
           }
         }
       }
@@ -135,9 +138,9 @@ export default {
         background:rgba(61,65,73,1);
         border-radius:14px;
         box-sizing: border-box;
-        padding: 6px 0 30px;
-        position: absolute;
-        bottom: -25px;
+        padding: 6px 0;
+        position: relative;
+        top: 0;
         left: 0;
         .tit{
           text-align: center;

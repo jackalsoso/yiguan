@@ -4,8 +4,6 @@ import router from './router'
 import store from './vuex'
 import 'lib-flexible'
 import './plugins/vant'
-import animated from 'animate.css'
-Vue.use(animated)
 
 Vue.config.productionTip = false
 

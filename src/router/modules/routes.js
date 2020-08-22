@@ -109,6 +109,42 @@ const routes = [
       keepAlive: false
     }
   },
+  {
+    path: '/focusPersonal',
+    name: 'focusPersonal',
+    component: () => import('@/pages/focusPersonal/index'),
+    meta: {
+      title: '关注的人',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/focusWorks',
+    name: 'focusWorks',
+    component: () => import('@/pages/focusWorks/index'),
+    meta: {
+      title: '点进一张的作品',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/focusInfor',
+    name: 'focusInfor',
+    component: () => import('@/pages/focusInfor/index'),
+    meta: {
+      title: '关注的人-主页',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/fansList',
+    name: 'fansList',
+    component: () => import('@/pages/fansList/index'),
+    meta: {
+      title: '粉丝-关注',
+      keepAlive: false
+    }
+  },
   
 
 

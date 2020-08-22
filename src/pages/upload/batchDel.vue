@@ -8,29 +8,31 @@
       </div>
     </div>
     <div class="top-bg"></div>
-    <div class="list" v-for="(v,i) in list" :key="i">
-      <div class="img">
-        <img src="@/static/img/item-1.jpeg" alt="">
+    <div class="list-wrap">
+      <div class="list" v-for="(v,i) in list" :key="i">
+        <div class="img">
+          <img src="@/static/img/item-1.jpeg" alt="">
+        </div>
+        <div class="cont">
+          <div class="o">
+            <span class="l"><i>标题：</i><a>红至高</a></span>
+            <span class="r">
+              <img src="@/static/img/gouxuan.png" alt="" v-show="v.checked" @click="choose(v,false)">
+              <img src="@/static/img/no-gouxuan.png" alt="" v-show="!v.checked" @click="choose(v,true)">
+            </span>
+          </div>
+          <div class="t">
+            <i>分类：</i><a>人物</a>
+          </div>
+          <div class="t">
+            <i>详情：</i><a>风格写实，神情生动......</a>
+          </div>
+          <div class="t">
+            <i>价格：</i><a>¥2500</a>
+          </div>
+        </div>
       </div>
-      <div class="cont">
-        <div class="o">
-          <span class="l"><i>标题：</i><a>红至高</a></span>
-          <span class="r">
-            <img src="@/static/img/gouxuan.png" alt="" v-show="v.checked" @click="choose(v,false)">
-            <img src="@/static/img/no-gouxuan.png" alt="" v-show="!v.checked" @click="choose(v,true)">
-          </span>
-        </div>
-        <div class="t">
-          <i>分类：</i><a>人物</a>
-        </div>
-        <div class="t">
-          <i>详情：</i><a>风格写实，神情生动......</a>
-        </div>
-        <div class="t">
-          <i>价格：</i><a>¥2500</a>
-        </div>
-      </div>
-    </div>
+    </div>  
     <div class="submit-but">
       <div class="del">
         <img src="@/static/img/del.png" alt="">
@@ -103,59 +105,62 @@ export default {
       height: 6px;
       background-color: #F5F5F5;
     }
-    .list{
-      padding: 15px;
-      display: flex;
-      border-bottom: 1px solid #DEDEDE;
-      .img{
-        width:77px;
-        height:103px;
-        border-radius:3px;
-        overflow: hidden;
+    .list-wrap{
+      padding-bottom: 80px;
+      .list{
+        padding: 15px;
         display: flex;
-        align-items: center;
-        margin-right: 15px;
-        img{
-          width: 100%;
-        }
-      } 
-      .cont{
-        width: 252px;
-        .t{
-          margin-bottom: 8px;
+        border-bottom: 1px solid #DEDEDE;
+        .img{
+          width:77px;
+          height:103px;
+          border-radius:3px;
+          overflow: hidden;
           display: flex;
           align-items: center;
-          font-size: 14px;
-          color: #999;
-          i{
-            width: 45px;
+          margin-right: 15px;
+          img{
+            width: 100%;
           }
-          a{
-            color: #000;
-            width: 205px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          } 
-        }
-        .o{
-          margin-bottom: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          .l{
-            @extend .t;
-            margin-bottom: 0;
-            a{
-              width: 145px;
-            }
-          }
-          .r{
+        } 
+        .cont{
+          width: 252px;
+          .t{
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            img{
-              width: 19px;
-              height: 19px;
+            font-size: 14px;
+            color: #999;
+            i{
+              width: 45px;
+            }
+            a{
+              color: #000;
+              width: 205px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            } 
+          }
+          .o{
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .l{
+              @extend .t;
+              margin-bottom: 0;
+              a{
+                width: 145px;
+              }
+            }
+            .r{
+              display: flex;
+              align-items: center;
+              img{
+                width: 19px;
+                height: 19px;
+              }
             }
           }
         }

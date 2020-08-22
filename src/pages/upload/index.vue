@@ -13,29 +13,31 @@
         <img src="@/static/img/select-hl.png" alt="" @click="$router.push('/batchDel')" >
       </div>
     </div>
-    <div class="list" v-for="v in 12" :key="v">
-      <div class="img">
-        <img src="@/static/img/item-1.jpeg" alt="">
+    <div class="list-wrap">
+      <div class="list" v-for="v in 12" :key="v">
+        <div class="img">
+          <img src="@/static/img/item-1.jpeg" alt="">
+        </div>
+        <div class="cont">
+          <div class="o">
+            <span class="l"><i>标题：</i><a>红至高</a></span>
+            <span class="r">
+              <img src="@/static/img/u-edit.png" alt="" @click="$router.push('/productEdit')">
+              <img src="@/static/img/u-del.png" alt="">
+            </span>
+          </div>
+          <div class="t">
+            <i>分类：</i><a>人物</a>
+          </div>
+          <div class="t">
+            <i>详情：</i><a>风格写实，神情生动......</a>
+          </div>
+          <div class="t">
+            <i>价格：</i><a>¥2500</a>
+          </div>
+        </div>
       </div>
-      <div class="cont">
-        <div class="o">
-          <span class="l"><i>标题：</i><a>红至高</a></span>
-          <span class="r">
-            <img src="@/static/img/u-edit.png" alt="" @click="$router.push('/productEdit')">
-            <img src="@/static/img/u-del.png" alt="">
-          </span>
-        </div>
-        <div class="t">
-          <i>分类：</i><a>人物</a>
-        </div>
-        <div class="t">
-          <i>详情：</i><a>风格写实，神情生动......</a>
-        </div>
-        <div class="t">
-          <i>价格：</i><a>¥2500</a>
-        </div>
-      </div>
-    </div>
+    </div>  
     <div class="submit-but">
       <span @click="addImg">
         <img src="@/static/img/add-bt.png" alt="">
@@ -212,65 +214,68 @@ export default {
         }
       }
     }
-    .list{
-      padding: 15px;
-      display: flex;
-      border-bottom: 1px solid #DEDEDE;
-      .img{
-        width:77px;
-        height:103px;
-        border-radius:3px;
-        overflow: hidden;
+    .list-wrap{
+      padding-bottom: 80px;
+      .list{
+        padding: 15px;
         display: flex;
-        align-items: center;
-        margin-right: 15px;
-        img{
-          width: 100%;
-        }
-      } 
-      .cont{
-        width: 252px;
-        .t{
-          margin-bottom: 8px;
+        border-bottom: 1px solid #DEDEDE;
+        .img{
+          width:77px;
+          height:103px;
+          border-radius:3px;
+          overflow: hidden;
           display: flex;
           align-items: center;
-          font-size: 14px;
-          color: #999;
-          i{
-            width: 45px;
+          margin-right: 15px;
+          img{
+            width: 100%;
           }
-          a{
-            color: #000;
-            width: 205px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          } 
-        }
-        .o{
-          margin-bottom: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          .l{
-            @extend .t;
-            margin-bottom: 0;
-            a{
-              width: 145px;
-            }
-          }
-          .r{
+        } 
+        .cont{
+          width: 252px;
+          .t{
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            img{
-              &:first-child{
-                width: 15px;
-                height: 16px;
+            font-size: 14px;
+            color: #999;
+            i{
+              width: 45px;
+            }
+            a{
+              color: #000;
+              width: 205px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            } 
+          }
+          .o{
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .l{
+              @extend .t;
+              margin-bottom: 0;
+              a{
+                width: 145px;
               }
-              &:last-child{
-                width: 15px;
-                height: 15px;
-                margin-left: 12px;
+            }
+            .r{
+              display: flex;
+              align-items: center;
+              img{
+                &:first-child{
+                  width: 15px;
+                  height: 16px;
+                }
+                &:last-child{
+                  width: 15px;
+                  height: 15px;
+                  margin-left: 12px;
+                }
               }
             }
           }
