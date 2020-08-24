@@ -4,7 +4,7 @@
       <img src="@/static/img/success-up.png" alt="">
       <label>成功上传</label>
       <span>审核通过后我们会站内信通知您</span>
-      <div class="but">确 定</div>
+      <div class="but" @click="$router.push('/nochangeD')">确 定</div>
     </div>
     
   </div>

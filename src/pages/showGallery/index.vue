@@ -3,7 +3,7 @@
     <div class="search-warp">
       <div class="search">
         <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.back(-1)" >
-        <span class="upload" @click="$router.push('/upload')">上传画作</span>
+        <span class="upload" @click="$router.push('/publishLink')">生成画廊</span>
       </div>
     </div>
 

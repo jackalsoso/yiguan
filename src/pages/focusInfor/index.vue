@@ -4,7 +4,7 @@
     <div class="infor-wrap">
       <div class="search-warp">
         <div class="search">
-          <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.back(-1)" >
+          <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.push('/focusPersonal')" >
         </div>
       </div>
 
@@ -39,7 +39,7 @@
           <div class="list-wrap">
             <div class="list" v-for="v in 4" :key="v">
               <div class="img">
-                <img src="@/static/img/item-1.jpeg" alt="" v-for="v2 in 4" :key="v2">
+                <img src="@/static/img/item-1.jpeg" alt="" v-for="v2 in 4" :key="v2" @click="$router.push('/focusWorks')">
               </div>
               <label class="l">夜景</label>
               <span class="s">Night  View</span>
@@ -140,6 +140,7 @@ export default {
       background-color: #fff;
       border-radius:20px 20px 0px 0px;
       padding: 30px 15px 0;
+      height: 17.1rem;
       .number{
         display: flex;
         align-items: center;
@@ -176,7 +177,7 @@ export default {
         }
       }
       .list-content{
-        height: 450px;
+        height: 15rem;
         padding-bottom: 40px;
         box-sizing: border-box;
         overflow: auto;

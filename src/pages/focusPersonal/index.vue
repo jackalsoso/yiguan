@@ -10,7 +10,7 @@
     </div>
 
     <div class="author" v-for="v in 3" :key="v">
-      <div class="name">
+      <div class="name" @click="$router.push('/focusInfor')">
         <label>作者昵称</label>
         <span>
           <img src="@/static/img/yuedul.png" alt="">
@@ -29,7 +29,7 @@
         <i>关注</i>
       </span>
       <span>
-        <img src="@/static/img/my-i.png" alt="">
+        <img src="@/static/img/my-i.png" alt="" @click="$router.push('/')">
         <i>我的</i>
       </span>
     </div>

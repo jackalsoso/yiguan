@@ -6,70 +6,19 @@
           class="back"
           src="@/static/img/back-icon2.png"
           alt=""
-          @click="$router.push('/nochangeD')"
+          @click="$router.push('/focusPersonal')"
         />
         <i></i>
       </div>
     </div>
-    <!-- 编辑详情弹窗 -->
-    <div class="anniu" @click="showPicker = true" v-if="!showPicker">
-      <span></span><span></span><span></span>
-    </div>
-    <van-popup v-model="showPicker" round position="bottom">
-      <div class="edit">
-        <div class="tit-1" @click="showPicker = false">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="browse">
-          <div class="voice-wrap">
-            <div class="voice">
-              <span
-                >桥 <img src="@/static/img/voice.png" alt="" /><i>30”</i></span
-              >
-              <span>¥2500 <img src="@/static/img/car.png" alt=""/></span>
-            </div>
-            <div class="yh">油画</div>
-          </div>
-          <p class="cont">
-            一个屡受挫折的年轻士兵在一家出售进口商品的店里做伙计，
-            当他打开这个从日本运来的陶器的包装纸后，惊奇地发现里面藏有一幅极富造诣的油画。
-          </p>
-          <p class="cont">
-            本书以日本东京的明治维新和法国巴黎的普法战争为背景，
-            并围绕一幅神秘的油画展开故事情节。小说主要刻画了四个主人
-            公，他们的命运轨迹或多或少地被这幅油画改写......小说将炽热
-            的爱情和充满悬念的故事情节巧妙地结合在一起，艺术的神秘和
-            生活的崎岖交相辉映，表现了艺术对生活的深刻影响。
-          </p>
-          <div class="video">
-            <video
-              ref="videoPlay"
-              src=""
-              controls
-              poster="@/static/img/item-2.jpeg"
-            ></video>
-            <img
-              src="@/static/img/play.png"
-              alt=""
-              v-show="!isPlay"
-              @click="play(true)"
-            />
-            <img
-              src="@/static/img/pause.png"
-              alt=""
-              v-show="isPlay"
-              @click="play(false)"
-            />
-          </div>
-        </div>
-      </div>
-    </van-popup>
+    <div  @click="$router.push('/browse')" style="position:absolute;top:50%;z-index:3000;">3d</div>
+    
   </div>
 </template>
 
 <script>
 export default {
-  name: "showGallery",
+  name: "nochangeD",
   data() {
     return {
       showPicker: true,

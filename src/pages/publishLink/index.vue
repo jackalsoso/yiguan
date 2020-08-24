@@ -14,8 +14,8 @@
     </div>
 
     <div class="edit-button">
-      <span>确认</span>
-      <span>取消</span>
+      <span @click="$router.push('/publishSuccess')">确认</span>
+      <span @click="$router.push('/showGallery')">取消</span>
     </div>
   </div>
 </template>

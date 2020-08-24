@@ -101,6 +101,15 @@ const routes = [
     }
   },
   {
+    path: '/nochangeD',
+    name: 'nochangeD',
+    component: () => import('@/pages/threeD/nochangeD'),
+    meta: {
+      title: '发布之后3D视角查看',
+      keepAlive: false
+    }
+  },
+  {
     path: '/browse',
     name: 'browse',
     component: () => import('@/pages/browse/index'),

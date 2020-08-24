@@ -82,7 +82,7 @@
 
     <!-- 确认上传 -->
     <div class="addPop" v-if="isShowProgress">
-      <div class="progress">
+      <div class="progress" @click="$router.push('/showGallery')">
         <img src="@/static/img/jindu-logo.png" alt="">
         <div class="hint">作品上传中...</div>
         <van-progress
