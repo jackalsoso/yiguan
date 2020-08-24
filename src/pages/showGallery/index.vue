@@ -3,6 +3,8 @@
     <div class="search-warp">
       <div class="search">
         <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.back(-1)" >
+        <img class="qiu" src="@/static/img/2D.png" alt="" v-show="!isThree" @click="isThree = true" >
+        <img class="qiu" src="@/static/img/3D.png" alt="" v-show="isThree" @click="isThree = false">
         <span class="upload" @click="$router.push('/upload')">上传画作</span>
       </div>
     </div>
@@ -15,7 +17,7 @@ export default {
   name: 'showGallery',
   data(){
     return{
-      
+      isThree: false,
     }
   },
   created(){
@@ -37,6 +39,10 @@ export default {
         justify-content: space-between;
         .back{
           margin-left: 15px;
+        }
+        .qiu{
+          width: 37px;
+          height: 37px;
         }
         .upload{
           width:74px;
