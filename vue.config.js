@@ -1,4 +1,5 @@
 const path = require('path')
+const ThreeExamples = require('import-three-examples')
 
 module.exports = {
   // 部署应用包时的基本 URL,用法和 webpack 本身的 output.publicPath 一致
@@ -67,7 +68,7 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-
+    ...ThreeExamples
   },
 
 }
