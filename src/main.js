@@ -4,6 +4,8 @@ import router from './router'
 import store from './vuex'
 import 'lib-flexible'
 import './plugins/vant'
+import * as three from 'three'
+import {FBXLoader} from 'three/examples/jsm/loaders/FBXLoader';
 
 Vue.config.productionTip = false
 
