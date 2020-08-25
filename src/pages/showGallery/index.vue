@@ -3,19 +3,26 @@
     <div class="search-warp">
       <div class="search">
         <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.back(-1)" >
-        <img class="qiu" src="@/static/img/2D.png" alt="" v-show="!isThree" @click="isThree = true" >
-        <img class="qiu" src="@/static/img/3D.png" alt="" v-show="isThree" @click="isThree = false">
+        <img class="qiu" src="@/static/img/2D.png" alt="" v-show="!isThree" @click="change3D" >
+        <img class="qiu" src="@/static/img/3D.png" alt="" v-show="isThree" @click="change3D">
         <!-- <span class="upload" @click="$router.push('/upload')">上传画作</span> -->
         <span class="upload" @click="$router.push('/publishLink')">生成画廊</span>
       </div>
     </div>
-
+    <webgl
+      style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
+      ref="webgl"
+    ></webgl>
   </div>
 </template>
 
 <script>
+import webgl from "../webgl/index";
 export default {
   name: 'showGallery',
+  components: {
+    webgl,
+  },
   data(){
     return{
       isThree: false,
@@ -25,7 +32,10 @@ export default {
 
   },
   methods:{
-    
+    change3D(){
+      this.isThree = !this.isThree
+      this.$refs.webgl.switch_camera()
+    }
   }
 }
 </script>
@@ -33,6 +43,7 @@ export default {
 <style lang="scss" scoped>
   .content{
     .search-warp{
+      z-index: 2000;
       background: none;
       .search{
         background: none;
@@ -59,7 +70,7 @@ export default {
     }
     width: 100%;
     height: 100%;
-    background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
+    // background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
     position: relative;
   }
 </style>

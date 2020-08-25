@@ -11,6 +11,10 @@
         <i></i>
       </div>
     </div>
+    <webgl
+      style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
+      ref="webgl"
+    ></webgl>
     <!-- 编辑详情弹窗 -->
     <div class="anniu" @click="showPicker = true" v-if="!showPicker">
       <span></span><span></span><span></span>
@@ -68,8 +72,12 @@
 </template>
 
 <script>
+import webgl from "../webgl/index";
 export default {
   name: "showGallery",
+  components: {
+    webgl,
+  },
   data() {
     return {
       showPicker: true,
@@ -118,6 +126,7 @@ export default {
   }
   .search-warp {
     background: none;
+    z-index: 2000;
     .search {
       background: none;
       padding: 20px 0;
@@ -139,7 +148,7 @@ export default {
   }
   width: 100%;
   height: 100%;
-  background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
+  // background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
   position: relative;
   .edit {
     padding-bottom: 15px;

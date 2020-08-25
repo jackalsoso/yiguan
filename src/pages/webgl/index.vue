@@ -1,11 +1,11 @@
 <template>
   <div>
-    <button v-on:click="insert({url:'/resource/01.jpg',type:'0',index:'023',backcolor:0xFFFFFF})"  style="width: 60px;height:40px;position: absolute">添加画框</button>
+    <!-- <button v-on:click="insert({url:'/resource/01.jpg',type:'0',index:'023',backcolor:0xFFFFFF})"  style="width: 60px;height:40px;position: absolute">添加画框</button>
     <button v-on:click="insert({url:'/resource/02.jpg',type:'0',index:'024',backcolor:0x000000})"  style="width: 60px;height:40px;position: absolute;left:60px">添加画框1</button>
     <button v-on:click="replacement_wallpaper('wall1_5')"  style="width: 60px;height:40px;position: absolute;left:120px">改变墙体</button>
     <button v-on:click="switch_camera()"  style="width: 60px;height:40px;position: absolute;left:180px">相机角度</button>
     <button v-on:click="transfrom_order('023','024')"  style="width: 60px;height:40px;position: absolute;left:240px">调换位置</button>
-    <button v-on:click="exhibition_floor('2c',false)"  style="width: 60px;height:40px;position: absolute;left:300px">隐藏层</button>
+    <button v-on:click="exhibition_floor('2c',false)"  style="width: 60px;height:40px;position: absolute;left:300px">隐藏层</button> -->
     <div id="WebGL" ref="WebGL">
 
     </div>
@@ -17,7 +17,7 @@
     import * as THREE from 'three'
     import {FBXLoader} from 'three/examples/jsm/loaders/FBXLoader';
 
-debugger
+// debugger
     var euler = new THREE.Euler( 0, 0, 0, 'YXZ' );
 var minPolarAngle = 0;
 var maxPolarAngle = 60;
@@ -132,12 +132,12 @@ export default {
   methods: {
     onProgress: function (xhr) {
       if (xhr.lengthComputable) {
-        var percentComplete = xhr.loaded / xhr.total * 100;
-        var progress = Math.round(percentComplete * 0.5, 2);
+        // var percentComplete = xhr.loaded / xhr.total * 100;
+        // var progress = Math.round(percentComplete * 0.5, 2);
       }
     },
-    onError: function (xhr) {
-    },
+    // onError: function (xhr) {
+    // },
     insert: function (info) {
       if (info.url) {
         let that = this;
@@ -296,13 +296,13 @@ export default {
     event_listen: function () {
       this.renderer.domElement.addEventListener("dblclick", this.dblclick, false);
 
-      this.renderer.domElement.addEventListener('mousemove', this.onMouseMove, false);
+      // this.renderer.domElement.addEventListener('mousemove', this.onMouseMove, false);
 
-      // this.renderer.domElement.addEventListener( 'touchstart', this.touchstart, false );
+      this.renderer.domElement.addEventListener( 'touchstart', this.touchstart, false );
 
-      // this.renderer.domElement.addEventListener( 'touchmove', this.touchmove, false );
+      this.renderer.domElement.addEventListener( 'touchmove', this.touchmove, false );
 
-      // this.renderer.domElement.addEventListener( 'touchend', this.touchend, false);
+      this.renderer.domElement.addEventListener( 'touchend', this.touchend, false);
     },
     resource_load: function () {
       let _this = this;
@@ -346,7 +346,7 @@ export default {
 
       var loader = new FBXLoader();
 
-      var that = this;
+      // var that = this;
 
       loader.load(url, function (object) {
         object.traverse(function (child) {
@@ -383,7 +383,7 @@ export default {
       };
       var loader = new THREE.TextureLoader();
 
-      var that = this;
+      // var that = this;
 
       loader.load(url, function (texture) {
         callback(texture);
@@ -395,8 +395,8 @@ export default {
 
       euler.setFromQuaternion(this.camera.quaternion);
 
-      euler.y += movementX * 0.002;
-      euler.x += movementY * 0.002;
+      euler.y -= movementX * 0.002;
+      euler.x -= movementY * 0.002;
 
       euler.x = Math.max(PI_2 - maxPolarAngle, Math.min(PI_2 - minPolarAngle, euler.x));
 
@@ -443,6 +443,7 @@ export default {
       start = current;
     },
     touchend: function (e) {
+      console.log(e)
       rotate = false;
       scale = false;
     },
@@ -508,6 +509,10 @@ export default {
   overflow: hidden;
 }
 #WebGL {
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index:1000;
   border: 1px solid pink;
 }
 

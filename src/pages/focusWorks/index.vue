@@ -14,7 +14,10 @@
         </span>
       </div>
     </div>
-
+    <webgl
+      style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
+      ref="webgl"
+    ></webgl>
     <van-popup v-model="showPicker" round position="bottom">
       <label class="share-tit">分享至</label>
       <div class="wrap">
@@ -49,8 +52,12 @@
 </template>
 
 <script>
+import webgl from "../webgl/index";
 export default {
-  name: 'galleryDetail',
+  name: 'focusWorks',
+  components: {
+    webgl,
+  },
   data(){
     return{
       showPicker: false,
@@ -106,7 +113,7 @@ export default {
     }
     width: 100%;
     height: 100%;
-    background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
+    // background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
     position: relative;
     .share-tit{
       display: block;
