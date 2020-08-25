@@ -31,7 +31,7 @@ export default {
   .content{
     width: 100%;
     height: 100%;
-    background: url(../../static/img/login-bg.jpg) center / cover no-repeat;
+    background: url(../../static/img/开始页面01.jpg) center / cover no-repeat;
     position: relative;
     .center{
       width: 200px;

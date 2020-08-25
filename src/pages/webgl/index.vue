@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- <button v-on:click="insert({url:'/resource/01.jpg',type:'0',index:'023',backcolor:0xFFFFFF})"  style="width: 60px;height:40px;position: absolute">添加画框</button>
-    <button v-on:click="insert({url:'/resource/02.jpg',type:'0',index:'024',backcolor:0x000000})"  style="width: 60px;height:40px;position: absolute;left:60px">添加画框1</button>
-    <button v-on:click="replacement_wallpaper('wall1_5')"  style="width: 60px;height:40px;position: absolute;left:120px">改变墙体</button>
+    <!-- <button v-on:click="insert({url:'/resource/01.jpg',type:'0',index:'023',backcolor:0x000000})"  style="width: 160px;height:40px;position: absolute;top:250px;z-index:2000">添加画框</button> -->
+    <!-- <button v-on:click="insert({url:'/resource/02.jpg',type:'0',index:'024',backcolor:0x000000})"  style="width: 160px;height:40px;position: absolute;left:160px;top:250px;z-index:2000">添加画框1</button> -->
+    <!-- <button v-on:click="replacement_wallpaper('wall1_5')"  style="width: 60px;height:40px;position: absolute;left:120px">改变墙体</button>
     <button v-on:click="switch_camera()"  style="width: 60px;height:40px;position: absolute;left:180px">相机角度</button>
     <button v-on:click="transfrom_order('023','024')"  style="width: 60px;height:40px;position: absolute;left:240px">调换位置</button>
     <button v-on:click="exhibition_floor('2c',false)"  style="width: 60px;height:40px;position: absolute;left:300px">隐藏层</button> -->
@@ -66,6 +66,7 @@ export default {
       frame_info:Map
     }
   },
+  props:["sceneLoad","mouseClick"],
   created:function () {
     //wall_container = new Array();
 
@@ -204,6 +205,7 @@ export default {
         }
 
         let position = new THREE.Vector3(0, 0, 0);
+
         let point = this.frame_position.getObjectByName("P_"+index);
         point.getWorldPosition(position);
         child.position = position;
@@ -336,7 +338,10 @@ export default {
       this.scene.add(scene);
       scene.position.set(0, 0, 0);
       this.frame_position = scene.getObjectByName("frame_position");
+      
       top = scene.getObjectByName("top");
+
+      this.$props.sceneLoad();
     },
     loader: function (url, callback) {
       let manager = new THREE.LoadingManager();

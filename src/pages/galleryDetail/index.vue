@@ -10,14 +10,14 @@
         />
         <img
           class="qiu"
-          src="@/static/img/2D.png"
+          src="@/static/img/3D.png"
           alt=""
           v-show="!isThree"
           @click="change3D"
         />
         <img
           class="qiu"
-          src="@/static/img/3D.png"
+          src="@/static/img/2D.png"
           alt=""
           v-show="isThree"
           @click="change3D"
@@ -47,7 +47,7 @@
       <div class="pop-bz">
         <div class="tit" @click="isShowBz = true">壁纸</div>
         <div class="backdrop" v-if="isShowBz">
-          <span v-for="(v, i) in 8" :key="v" @click="choose(i)">
+          <span v-for="(v, i) in 4" :key="v" @click="choose(i)">
             <img
               src="@/static/img/gouxuan.png"
               alt=""
@@ -193,7 +193,7 @@ export default {
         flex-wrap: wrap;
         padding-left: 28px;
         span {
-          background: #ffdbe3;
+          // background: #ffdbe3;
           width: 65px;
           height: 20px;
           border-radius: 10px;
@@ -211,5 +211,17 @@ export default {
       }
     }
   }
+}
+.backdrop span:nth-child(1){
+     background: #D4D1CC;
+}
+.backdrop span:nth-child(2){
+     background: #BAB1A8;
+}
+.backdrop span:nth-child(3){
+     background: #BCC1BB;
+}
+.backdrop span:nth-child(4){
+     background: #BABEC1;
 }
 </style>

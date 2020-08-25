@@ -45,8 +45,8 @@
       </div>
     </div>
 
-    <div class="pop" v-if="isShowPop">
-      <span @click="isShowPop = false">选择画廊类型</span>
+    <div class="pop" v-if="isShowPop"  @click="isShowPop = false">
+      <span>选择画廊类型</span>
     </div>
   </div>
 </template>
