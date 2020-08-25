@@ -1,22 +1,8 @@
-
-//     <div class="search-warp">
-//       <div class="search">
-//         <img
-//           class="back"
-//           src="@/static/img/back-icon2.png"
-//           alt=""
-//           @click="$router.push('/focusPersonal')"
-//         />
-//         <i></i>
-//       </div>
-//     </div>
-//     <div  @click="$router.push('/browse')" style="position:absolute;top:50%;z-index:3000;">3d</div>
-
 <template>
   <div class="content">
     <div class="search-warp">
       <div class="search">
-        <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.back(-1)" >
+        <img class="back" src="@/static/img/back-icon2.png" alt="" @click="$router.push('/focusPersonal')" >
         <!-- <img class="qiu" src="@/static/img/2D.png" alt="" v-show="!isThree" @click="change3D" > -->
         <img class="qiu" src="@/static/img/3D.png" alt="" v-show="isThree" @click="$router.push('/browse')">
         <!-- <span class="upload" @click="$router.push('/upload')">上传画作</span> -->
