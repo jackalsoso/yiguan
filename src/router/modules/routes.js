@@ -154,10 +154,15 @@ const routes = [
       keepAlive: false
     }
   },
-  
-
-
-
+  {
+    path: '/webgl',
+    name: 'webgl',
+    component: () => import('@/pages/webgl/index'),
+    meta: {
+      title: 'webgl',
+      keepAlive: false
+    }
+  },
 ]
 
 export default routes;

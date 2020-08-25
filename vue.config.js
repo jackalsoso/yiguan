@@ -1,5 +1,5 @@
 const path = require('path')
-const ThreeExamples = require('import-three-examples')
+// const ThreeExamples = require('import-three-examples')
 
 module.exports = {
   // 部署应用包时的基本 URL,用法和 webpack 本身的 output.publicPath 一致
@@ -38,7 +38,7 @@ module.exports = {
     // css预设器配置项
     // loaderOptions: {
     //   postcss: {
-       
+
     //   }
     // },
     // 是否启用 CSS modules for all css / pre-processor files.
@@ -51,7 +51,7 @@ module.exports = {
   // webpack-dev-server 相关配置
   devServer: {
     open: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8088,
     https: false,
     hotOnly: false,
@@ -68,7 +68,7 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-    ...ThreeExamples
+    // ...ThreeExamples
   },
 
 }
