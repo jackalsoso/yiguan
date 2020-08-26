@@ -10,7 +10,6 @@
         </div>
 
         <div class="product">
-          
           <div class="list" v-for="(v,i) in list" :key="i">
             <div class="name">
               <img class="h animated rotateIn" src="@/static/img/item-1.jpeg" alt="">

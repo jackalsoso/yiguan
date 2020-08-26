@@ -6,14 +6,14 @@
         <img src="@/static/img/jindu-logo.png" alt="">
         <div class="hint">生成画廊中...</div>
         <van-progress
-          :percentage="75"
-          show-pivot="false"
+          :percentage="nuw"
+          :show-pivot="true"
           color="#F2630D"
         />
       </div>
     </div>
 
-    <div class="edit-button">
+    <div class="edit-button" v-if="nuw == 100">
       <span @click="$router.push('/publishSuccess')">确认</span>
       <span @click="$router.push('/showGallery')">取消</span>
     </div>
@@ -25,14 +25,34 @@ export default {
   name: 'publishLink',
   data(){
     return{
-      
+      nuw:0,
     }
   },
   created(){
 
   },
+  mounted(){
+    this.click()
+  },
   methods:{
-    
+    click() {
+      //定义定时器开始时间为0
+
+      var progressnuw = 0; //顶一个定时器
+
+      var timer = setInterval(() => {
+        //变量一直++
+
+        progressnuw++; //清楚定时器
+
+        if (progressnuw >= 100) {
+          clearInterval(timer);
+          // this.$router.push('/publishSuccess')
+        } //获取重新赋值
+
+        this.nuw = progressnuw;
+      }, 30);
+    },
   }
 }
 </script>

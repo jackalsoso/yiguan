@@ -26,11 +26,11 @@
         <div class="number">
           <span class="l">他的作品</span>
           <span class="r">
-            <span>
+            <span @click="$router.push('/fansList')">
               <i>135</i>
               <i>粉丝</i>
             </span>
-            <span>
+            <span @click="$router.push('/fansList')">
               <i>246</i>
               <i>关注</i>
             </span>

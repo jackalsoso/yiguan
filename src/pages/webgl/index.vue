@@ -2,7 +2,7 @@
   <div>
     <!-- <button v-on:click="insert({url:'/resource/01.jpg',type:'0',index:'023',backcolor:0x000000})"  style="width: 160px;height:40px;position: absolute;top:250px;z-index:2000">添加画框</button> -->
     <!-- <button v-on:click="insert({url:'/resource/02.jpg',type:'0',index:'024',backcolor:0x000000})"  style="width: 160px;height:40px;position: absolute;left:160px;top:250px;z-index:2000">添加画框1</button> -->
-    <!-- <button v-on:click="replacement_wallpaper('wall1_5')"  style="width: 60px;height:40px;position: absolute;left:120px">改变墙体</button>
+    <!-- <button v-on:click="replacement_wallpaper('wall1_2')"  style="width: 60px;height:40px;position: absolute;left:120px">改变墙体</button>
     <button v-on:click="switch_camera()"  style="width: 60px;height:40px;position: absolute;left:180px">相机角度</button>
     <button v-on:click="transfrom_order('023','024')"  style="width: 60px;height:40px;position: absolute;left:240px">调换位置</button>
     <button v-on:click="exhibition_floor('2c',false)"  style="width: 60px;height:40px;position: absolute;left:300px">隐藏层</button> -->
