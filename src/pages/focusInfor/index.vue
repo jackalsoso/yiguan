@@ -9,16 +9,17 @@
       </div>
 
       <div class="author">
-        <div class="name">
+        <div class="name animated fadeIn">
           <img src="@/static/img/headImg.jpeg" alt="">
           <div class="cont">
             <label>作者昵称</label>
             <span>贫穷的纠缠，坚强的意识...</span>
           </div>
         </div>
-        <div class="add">
-          <img src="@/static/img/add-bt2.png" alt="">
+        <div class="add" v-show="!isAdd" @click="isAdd = true">
+          <img src="@/static/img/add-bt2.png" alt="" >
         </div>
+        <img class="succ" src="@/static/img/success-up.png" alt="" v-show="isAdd" @click="isAdd = false">
       </div>
 
       <div class="product animated fadeInUp">
@@ -58,7 +59,7 @@ export default {
   name: 'focusInfor',
   data(){
     return{
-
+      isAdd: false,
     }
   },
   created(){
@@ -134,6 +135,10 @@ export default {
             height: 15px;
           }
         }
+        .succ{
+          width: 25px;
+          height: 25px;
+        }
       }
     }
     .product{
@@ -202,6 +207,9 @@ export default {
               img{
                 width: 77px;
                 height: 77px;
+                &:nth-child(1), &:nth-child(2){
+                  margin-bottom: 6px;
+                }
               }
             }
             .l{

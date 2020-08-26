@@ -76,7 +76,7 @@ export default {
         border-radius:20px 20px 0px 0px;
         padding: 30px 15px;
         box-sizing: border-box;
-        height: 598px;
+        height: calc(100% - 70px);
         overflow: auto;
         .list{
           display: flex;

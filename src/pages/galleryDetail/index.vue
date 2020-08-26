@@ -29,7 +29,7 @@
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
     ></webgl>
-    <div class="popup-bottom">
+    <div class="popup-bottom animated fadeInUp">
       <div class="pop-type">
         <div class="tit" @click="(isShowHk = !isShowHk), (isShowBz = false)">
           <span></span><span></span>

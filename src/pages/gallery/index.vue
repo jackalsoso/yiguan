@@ -1,47 +1,49 @@
 <template>
   <div class="content">
-    <div class="search-warp">
-      <div class="search">
-        <img class="back" src="@/static/img/back-icon.png" alt="" @click="$router.back(-1)" >
-        <div class="input" @click="$router.push('/search')">
-          <img src="@/static/img/search.png" alt="">
-          <input type="text" placeholder="搜索热门画廊模板" readonly >
+    <div class="animated fadeInUp">
+      <div class="search-warp">
+        <div class="search">
+          <img class="back" src="@/static/img/back-icon.png" alt="" @click="$router.back(-1)" >
+          <div class="input" @click="$router.push('/search')">
+            <img src="@/static/img/search.png" alt="">
+            <input type="text" placeholder="搜索热门画廊模板" readonly >
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="box">
-      <div class="item" @click="$router.push({ path: '/gallery/1' })">
-        <img class="img" src="@/static/img/item-1.jpeg" alt="">
-        <div class="tit">
-          <label>现代风格</label>
-          <span>4.5分</span>
+      <div class="box">
+        <div class="item" @click="$router.push({ path: '/gallery/1' })">
+          <img class="img" :class="{ 'active': !isShowPop }" src="@/static/img/item-1.jpeg" alt="">
+          <div class="tit">
+            <label>现代风格</label>
+            <span>4.5分</span>
+          </div>
+          <div class="num">30个画框</div>
         </div>
-        <div class="num">30个画框</div>
-      </div>
-      <div class="item" @click="$router.push({ path: '/gallery/1' })">
-        <img class="img" src="@/static/img/item-1.jpeg" alt="">
-        <div class="tit">
-          <label>现代风格</label>
-          <span>4.5分</span>
+        <div class="item" @click="$router.push({ path: '/gallery/1' })">
+          <img class="img" :class="{ 'active': !isShowPop }" src="@/static/img/item-1.jpeg" alt="">
+          <div class="tit">
+            <label>现代风格</label>
+            <span>4.5分</span>
+          </div>
+          <div class="num">30个画框</div>
         </div>
-        <div class="num">30个画框</div>
-      </div>
-      <div class="item" @click="$router.push({ path: '/gallery/1' })">
-        <img class="img" src="@/static/img/item-2.jpeg" alt="">
-        <div class="tit">
-          <label>现代风格</label>
-          <span>4.5分</span>
+        <div class="item" @click="$router.push({ path: '/gallery/1' })">
+          <img class="img" :class="{ 'active': !isShowPop }" src="@/static/img/item-2.jpeg" alt="">
+          <div class="tit">
+            <label>现代风格</label>
+            <span>4.5分</span>
+          </div>
+          <div class="num">30个画框</div>
         </div>
-        <div class="num">30个画框</div>
-      </div>
-      <div class="item" @click="$router.push({ path: '/gallery/1' })">
-        <img class="img" src="@/static/img/item-1.jpeg" alt="">
-        <div class="tit">
-          <label>现代风格</label>
-          <span>4.5分</span>
+        <div class="item" @click="$router.push({ path: '/gallery/1' })">
+          <img class="img" :class="{ 'active': !isShowPop }" src="@/static/img/item-1.jpeg" alt="">
+          <div class="tit">
+            <label>现代风格</label>
+            <span>4.5分</span>
+          </div>
+          <div class="num">30个画框</div>
         </div>
-        <div class="num">30个画框</div>
       </div>
     </div>
 
@@ -85,6 +87,18 @@ export default {
         margin-bottom: 30px;
         .img{
           width: 100%;
+          &.active{
+            transform-origin: left top;
+            animation: imgRun .5s;
+          }
+        }
+        @keyframes imgRun {
+          0%{
+            transform: scale(0);
+          }
+          100%{
+            transform: scale(1);
+          }
         }
         .tit{
           padding: 10px 0;
