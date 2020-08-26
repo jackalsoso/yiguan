@@ -59,10 +59,10 @@
     </div>
 
     <div class="submit-but">
-      <span>
+      <span @click="$router.push('/upload')">
         <i>确认</i>
       </span>
-      <span>
+      <span @click="$router.push('/upload')">
         <i>取消</i>
       </span>
     </div>

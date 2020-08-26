@@ -23,16 +23,20 @@
           @click="change3D"
         />
         <!-- <span class="upload" @click="$router.push('/upload')">上传画作</span> -->
-        <span class="addhk" @click="addpic">生成画框</span>
+        
         <span class="upload" @click="$router.push('/publishLink')"
           >生成画廊</span
         >
       </div>
+      <span class="addhk" @click="changewall1">墙纸1</span>
+      <span class="addhk2" @click="changewall2">墙纸2</span>
+      <span class="addhk3" @click="changewall3">墙纸3</span>
+      <span class="addhk4" @click="changewall4">墙纸4</span>
     </div>
     <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
-      :sceneLoad="change3D"
+      :sceneLoad="addpic"
     ></webgl>
   </div>
 </template>
@@ -66,6 +70,18 @@ export default {
       // alert("Enter");
       this.isThree = !this.isThree;
       this.$refs.webgl.switch_camera();
+    },
+    changewall1(){
+      this.$refs.webgl.replacement_wallpaper('wall1_1')
+    },
+    changewall2(){
+      this.$refs.webgl.replacement_wallpaper('wall1_2')
+    },
+    changewall3(){
+      this.$refs.webgl.replacement_wallpaper('wall1_3')
+    },
+    changewall4(){
+      this.$refs.webgl.replacement_wallpaper('wall1_4')
     },
     addpic() {
       this.$refs.webgl.insert({
@@ -195,14 +211,56 @@ export default {
 
 <style lang="scss" scoped>
 .addhk {
-  width: 74px;
-  height: 28px;
-  background: rgba(241, 99, 13, 1);
+  width: 55px;
+  height: 20px;
+  background: #D4D1CC;
   border-radius: 14px 14px 14px 14px;
   font-size: 14px;
   color: #fff;
   text-align: center;
-  line-height: 28px;
+  line-height: 20px;
+  position: absolute;
+  left: 15%;
+  z-index:21000;
+}
+.addhk2 {
+  width: 55px;
+  height: 20px;
+  background: #BAB1A8;
+  border-radius: 14px 14px 14px 14px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  left: 35%;
+  z-index:21000;
+}
+.addhk3 {
+  width: 55px;
+  height: 20px;
+  background: #BCC1BB;
+  border-radius: 14px 14px 14px 14px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  left: 55%;
+  z-index:21000;
+}
+.addhk4 {
+  width: 55px;
+  height: 20px;
+  background: #BABEC1;
+  border-radius: 14px 14px 14px 14px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  left: 75%;
+  z-index:21000;
 }
 .content {
   .search-warp {

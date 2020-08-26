@@ -113,7 +113,7 @@
       <div class="progress" @click="$router.push('/showGallery')">
         <img src="@/static/img/jindu-logo.png" alt="" />
         <div class="hint">作品上传中...</div>
-        <van-progress :percentage="75" :show-pivot="true" color="#F2630D" />
+        <van-progress :percentage="nuw" :show-pivot="true" color="#F2630D" />
       </div>
     </div>
   </div>
@@ -136,6 +136,7 @@ export default {
         { id: 3, size: "146×97" },
         { id: 4, size: "162×130" },
       ],
+      nuw:0,
     };
   },
   created() {},
@@ -170,6 +171,28 @@ export default {
     },
     uploadok() {
       this.isShowProgress = true;
+      this.click();
+      // setTimeout(() => {
+      //   this.isShowProgress = false;
+      // }, 2000);
+    },
+    click() {
+      //定义定时器开始时间为0
+
+      var progressnuw = 0; //顶一个定时器
+
+      var timer = setInterval(() => {
+        //变量一直++
+
+        progressnuw++; //清楚定时器
+
+        if (progressnuw >= 100) {
+          clearInterval(timer);
+          this.$router.push('/showGallery')
+        } //获取重新赋值
+
+        this.nuw = progressnuw;
+      }, 30);
     },
   },
 };

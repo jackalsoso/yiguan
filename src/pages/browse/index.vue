@@ -11,10 +11,10 @@
         <i></i>
       </div>
     </div>
-    <webgl
+    <!-- <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
-    ></webgl>
+    ></webgl> -->
     <!-- 编辑详情弹窗 -->
     <div class="anniu" @click="showPicker = true" v-if="!showPicker">
       <span></span><span></span><span></span>
@@ -72,11 +72,11 @@
 </template>
 
 <script>
-import webgl from "../webgl/index";
+// import webgl from "../webgl/index";
 export default {
   name: "showGallery",
   components: {
-    webgl,
+    // webgl,
   },
   data() {
     return {
@@ -114,7 +114,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.anniu  span {
+.anniu span {
   width: 45px;
   height: 2px;
   background-color: #cbd1d9;
@@ -148,7 +148,8 @@ export default {
   }
   width: 100%;
   height: 100%;
-  // background: url(../../static/img/item-1.jpeg) center / cover no-repeat;
+  background: url(../../static/img/01.jpg) center / cover no-repeat;
+  background-size: 100% 100%;
   position: relative;
   .edit {
     padding-bottom: 15px;
