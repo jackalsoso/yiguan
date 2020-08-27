@@ -77,6 +77,9 @@ export default {
     };
   },
   created() {},
+  mounted(){
+    // this.$refs.webgl.load_scene('')
+  },
   methods: {
     choose(i) {
       this.checkIndex = i;

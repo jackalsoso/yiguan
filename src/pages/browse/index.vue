@@ -6,15 +6,16 @@
           class="back"
           src="@/static/img/back-icon2.png"
           alt=""
-          @click="$router.push('/nochangeD')"
+          @click="$router.push('/focusPersonal')"
         />
         <i></i>
       </div>
     </div>
-    <!-- <webgl
+    <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
-    ></webgl> -->
+      :sceneLoad="addpic" :mouseClick="routerto"
+    ></webgl>
     <!-- 编辑详情弹窗 -->
     <div class="anniu" @click="showPicker = true" v-if="!showPicker">
       <span></span><span></span><span></span>
@@ -72,15 +73,15 @@
 </template>
 
 <script>
-// import webgl from "../webgl/index";
+import webgl from "../webgl/index";
 export default {
   name: "showGallery",
   components: {
-    // webgl,
+    webgl,
   },
   data() {
     return {
-      showPicker: true,
+      showPicker: false,
       isPlay: false,
     };
   },
@@ -93,6 +94,131 @@ export default {
       } else {
         this.$refs.videoPlay.pause();
       }
+    },
+    routerto(){
+      this.showPicker = true
+    },
+    addpic() {
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/01.jpg",
+        type: "0",
+        index: "023",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/1.jpg",
+        type: "0",
+        index: "022",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/2.jpg",
+        type: "0",
+        index: "021",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/3.jpg",
+        type: "0",
+        index: "020",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/4.jpg",
+        type: "0",
+        index: "019",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/5.jpg",
+        type: "0",
+        index: "018",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/6.jpg",
+        type: "0",
+        index: "017",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/7.jpg",
+        type: "0",
+        index: "016",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/8.jpg",
+        type: "0",
+        index: "015",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/9.jpg",
+        type: "0",
+        index: "014",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/10.jpg",
+        type: "0",
+        index: "013",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/11.jpg",
+        type: "0",
+        index: "012",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/12.jpg",
+        type: "0",
+        index: "011",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/13.jpg",
+        type: "0",
+        index: "010",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/14.jpg",
+        type: "0",
+        index: "009",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/15.jpg",
+        type: "0",
+        index: "008",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/16.jpg",
+        type: "0",
+        index: "007",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/17.jpg",
+        type: "0",
+        index: "006",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/18.jpg",
+        type: "0",
+        index: "005",
+        backcolor: 0x000000,
+      });
+      this.$refs.webgl.insert({
+        url: "http://192.168.1.104:8088/resource/19.jpg",
+        type: "0",
+        index: "004",
+        backcolor: 0x000000,
+      });
     },
   },
 };
@@ -148,8 +274,8 @@ export default {
   }
   width: 100%;
   height: 100%;
-  background: url(../../static/img/01.jpg) center / cover no-repeat;
-  background-size: 100% 100%;
+  // background: url(../../static/img/01.jpg) center / cover no-repeat;
+  // background-size: 100% 100%;
   position: relative;
   .edit {
     padding-bottom: 15px;

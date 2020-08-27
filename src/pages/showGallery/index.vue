@@ -36,7 +36,7 @@
     <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
-      :sceneLoad="addpic"
+      :sceneLoad="addpic" :mouseClick="routerto"
     ></webgl>
   </div>
 </template>
@@ -59,13 +59,15 @@ export default {
   },
   created() {},
   mounted() {
-    // this.$refs.webgl.insert({url:'http://192.168.1.104:8088/resource/01.jpg',type:'0',index:'023',backcolor:0xFFFFFF})
     this.$nextTick(function() {
-      // this.$refs.webgl.insert({url:'http://192.168.1.104:8088/resource/01.jpg',type:'0',index:'023',backcolor:0xFFFFFF})
+      // this.$refs.webgl.load_scene('/resource/gallery.FBX')
+      //加载fbx材质文件
     });
-    // this.$refs.webgl.insert({url:'../../static/img/item-1.jpeg',type:'0',index:'024',backcolor:0x000000})
   },
   methods: {
+    routerto(){
+      // alert(1)
+    },
     change3D() {
       // alert("Enter");
       this.isThree = !this.isThree;

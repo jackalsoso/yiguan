@@ -51,7 +51,7 @@ export default {
         } //获取重新赋值
 
         this.nuw = progressnuw;
-      }, 30);
+      }, 20);
     },
   }
 }
