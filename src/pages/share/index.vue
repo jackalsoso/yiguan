@@ -54,15 +54,28 @@
       </div>
       <div class="cancel" @click="showPicker = false">取消</div>
     </van-popup>
+    <div class="backhome"> 
+        <van-button round color="#F2630D" style="width: 2.8rem;height:0.8rem" type="info">返回主界面</van-button>
+    </div>
+    <div class="focus-but">
+      <span @click="$router.push('/focusInfor')" style="border-right:2px solid #ccc">
+        <img src="@/static/img/关注的人--黑色.png" alt="" />
+        <i>关注</i>
+      </span>
+      <span>
+        <img src="@/static/img/add-bt2.png" alt="" @click="$router.push('/')" />
+        <i>生成画廊</i>
+      </span>
+    </div>
   </div>
 </template>
 
 <script>
-import webgl from "../webgl/index";
+// import webgl from "../webgl/index";
 export default {
-  name: "focusWorks",
+  name: "share",
   components: {
-    webgl,
+    // webgl,
   },
   data() {
     return {
@@ -280,6 +293,61 @@ export default {
     text-align: center;
     font-size: 16px;
     color: #007aff;
+  }
+  .backhome{
+      width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    z-index: 1000;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .focus-but {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      i {
+        font-size: 10px;
+      }
+      &:first-child {
+        background-color: #fff;
+        img {
+          width: 19px;
+          height: 16px;
+          margin-bottom: 2px;
+        }
+        i {
+          color: #000;
+        }
+      }
+      &:last-child {
+        img {
+          width: 15px;
+          height: 16px;
+          margin-bottom: 2px;
+        }
+        i {
+          color: #000;
+        }
+      }
+    }
   }
 }
 </style>

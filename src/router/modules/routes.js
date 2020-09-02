@@ -163,6 +163,15 @@ const routes = [
       keepAlive: false
     }
   },
+  {
+    path: '/share',
+    name: 'share',
+    component: () => import('@/pages/share/index'),
+    meta: {
+      title: '分享',
+      keepAlive: false
+    }
+  },
 ]
 
 export default routes;
