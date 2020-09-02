@@ -55,7 +55,7 @@
       <div class="cancel" @click="showPicker = false">取消</div>
     </van-popup>
     <div class="backhome"> 
-        <van-button round color="#F2630D" style="width: 2.8rem;height:0.8rem" type="info">返回主界面</van-button>
+        <van-button round color="#F2630D" style="width: 2.8rem;height:0.8rem" type="info" @click="$router.push('/')">返回主界面</van-button>
     </div>
     <div class="focus-but">
       <span @click="$router.push('/focusInfor')" style="border-right:2px solid #ccc">
@@ -63,7 +63,7 @@
         <i>关注</i>
       </span>
       <span>
-        <img src="@/static/img/add-bt2.png" alt="" @click="$router.push('/')" />
+        <img src="@/static/img/add-bt2.png" alt="" @click="$router.push('/gallery')" />
         <i>生成画廊</i>
       </span>
     </div>
