@@ -15,8 +15,10 @@
 
 			}
 		},
-		mounted(){
-      
+		mounted() {
+      this.$http.entryCats().then(res => {
+        console.log(res)
+      })
     },
 		methods: {
       
