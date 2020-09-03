@@ -1,11 +1,11 @@
 import Vue from 'vue'
 // 在这里引入你所需的组件
 import {
-  Toast,Loading,RadioGroup,Radio,Picker,Popup,Uploader,Progress
+  Toast,Loading,RadioGroup,Radio,Picker,Popup,Uploader,Progress,Button
 } from 'vant'
 
 // 按需引入UI组件
-Vue.use(Loading).use(RadioGroup).use(Radio).use(Picker).use(Popup).use(Uploader).use(Progress)
+Vue.use(Loading).use(RadioGroup).use(Radio).use(Picker).use(Popup).use(Uploader).use(Progress).use(Button)
 
 Vue.prototype.$toast = Toast;
 

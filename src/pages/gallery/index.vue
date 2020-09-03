@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="animated fadeInUp">
+    <div class="">
       <div class="search-warp">
         <div class="search">
           <img class="back" src="@/static/img/back-icon.png" alt="" @click="$router.back(-1)" >
@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="box">
+      <div class="box animated fadeInUp">
         <div class="item" @click="$router.push({ path: '/gallery/1' })">
           <img class="img" :class="{ 'active': !isShowPop }" src="@/static/img/item-1.jpeg" alt="">
           <div class="tit">
@@ -88,8 +88,8 @@ export default {
         .img{
           width: 100%;
           &.active{
-            transform-origin: left top;
-            animation: imgRun .5s;
+            // transform-origin: left top;
+            // animation: imgRun .5s;
           }
         }
         @keyframes imgRun {
