@@ -123,7 +123,79 @@ const routes = [
     name: 'focusPersonal',
     component: () => import('@/pages/focusPersonal/index'),
     meta: {
-      title: '关注的人',
+      title: '关注的人/我的',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/dataEditing',
+    name: 'dataEditing',
+    component: () => import('@/pages/focusPersonal/dataEditing'),
+    meta: {
+      title: '我的编辑',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myFans',
+    name: 'myFans',
+    component: () => import('@/pages/focusPersonal/myFans'),
+    meta: {
+      title: '我的粉丝',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myFollow',
+    name: 'myFollow',
+    component: () => import('@/pages/focusPersonal/myFollow'),
+    meta: {
+      title: '我的关注',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myHistory',
+    name: 'myHistory',
+    component: () => import('@/pages/focusPersonal/myHistory'),
+    meta: {
+      title: '我的历史',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myShen',
+    name: 'myShen',
+    component: () => import('@/pages/focusPersonal/myShen'),
+    meta: {
+      title: '我的审核',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myHelp',
+    name: 'myHelp',
+    component: () => import('@/pages/focusPersonal/myHelp'),
+    meta: {
+      title: '我的帮助',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myOption',
+    name: 'myOption',
+    component: () => import('@/pages/focusPersonal/myOption'),
+    meta: {
+      title: '我的设置',
+      keepAlive: false
+    }
+  },
+  {
+    path: '/myHelpmsg',
+    name: 'myHelpmsg',
+    component: () => import('@/pages/focusPersonal/myHelpmsg'),
+    meta: {
+      title: '我的帮助-内容',
       keepAlive: false
     }
   },
