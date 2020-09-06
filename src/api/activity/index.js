@@ -12,7 +12,7 @@ let creatSign = () => {
 }
 // 拼接参数
 let combineParams = (params) => {
-  return params ? `${creatSign()}&<=${params}` : `${creatSign()}`
+  return params ? `${creatSign()}&<=${params}` : creatSign()
 }
 
 export default {
