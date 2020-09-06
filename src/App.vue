@@ -16,7 +16,8 @@
 			}
 		},
 		mounted() {
-      this.$http.entryCats().then(res => {
+      let params = JSON.stringify(['8cb71cee69ab0c840d3efcafdbeefa0f', true])
+      this.$http.login(params).then(res => {
         console.log(res)
       })
     },
