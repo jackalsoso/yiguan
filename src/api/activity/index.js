@@ -25,4 +25,7 @@ export default {
   entryCats(params) {
     return http.get(`${BASEURL}/entry/cats`, params);
   },
+  omember(params){
+    return http.get(`${BASEURL}/entry/cfg`, params);
+  }
 }

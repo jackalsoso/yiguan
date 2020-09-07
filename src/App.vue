@@ -18,13 +18,14 @@
 		mounted() {
       let params = JSON.stringify(['8cb71cee69ab0c840d3efcafdbeefa0f', true])
       this.$http.login(params).then(res => {
+				debugger
         console.log(res)
       })
     },
 		methods: {
-      
+
     },
-    
+
 	}
 </script>
 
@@ -173,7 +174,7 @@
             font-size: 16px;
             color: #000;
             &:last-child{
-              border-bottom: none; 
+              border-bottom: none;
             }
             i{
               width: 110px;
@@ -209,7 +210,7 @@
           color: #007AFF;
           text-align: center;
           &:first-child{
-            border-right: 1px solid #DEDEDE; 
+            border-right: 1px solid #DEDEDE;
           }
         }
       }

@@ -58,11 +58,11 @@ module.exports = {
     // http 代理配置
     proxy: {
       '/api': {
-        target: 'http://plt.dev.yiyiny.com',
+        target: 'http://plt.dev.yiyiny.com/api',
         changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/api'
-        }
+        // pathRewrite: {
+        //   '^/api': '/api'
+        // }
       }
     },
   },
