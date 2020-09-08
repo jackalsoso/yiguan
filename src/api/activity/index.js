@@ -20,7 +20,7 @@ export default {
     return http.get(`${BASEURL}/O/member${combineParams(params)}`);
   },
   login(params) {
-    return http.get(`${BASEURL}/C/login${combineParams(params)}`);
+    return http.get(`${BASEURL}/entry/login${combineParams(params)}`);
   },
   entryCats(params) {
     return http.get(`${BASEURL}/entry/cats${combineParams(params)}`);
