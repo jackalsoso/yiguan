@@ -2,6 +2,7 @@
   <div class="content">
     <div class="top">
       <img
+      style="width:0.3rem"
         class="back"
         src="../../static/icon/返回箭头--黑色.png"
         alt=""
@@ -13,7 +14,7 @@
       <div>
         <van-icon
           name="clock-o"
-          size="20"
+          size="60"
           @click="historypop"
         />
         <van-popup v-model="show" position="bottom">
@@ -40,15 +41,15 @@
               <img
                 :src="userInfo.avatar"
                 alt="你的头像"
-                style="width: 1rem;height: 1rem;border-radius: 1rem;"
+                style="width: 1.5rem;height: 1.5rem;border-radius: 1rem;"
                 class="animated bounce"
               />
             </div>
             <div class="msg_all">
-              <p style="height:50%;font-size: 0.34rem;font-weight: bold;">
+              <p style="height:60%;font-size: 0.4rem;font-weight: bold;line-height:0.8rem">
                 {{ userInfo.name }}
               </p>
-              <p style="height:50%;">
+              <p style="height:40%;font-size: 0.32rem;">
                 <!-- <span>作品 {{ userInfo.works }}</span
                 ><span>粉丝 {{ userInfo.fansnum }}</span> -->
                 <span>浏览时间： {{userInfo.date}}</span>
@@ -56,7 +57,7 @@
             </div>
           </div>
           <div class="my_icon" @touchstart="icontouch(index)">
-            <van-icon name="cross" size="20" />
+            <van-icon name="cross" size="60" />
           </div>
 
           <!-- <van-field v-model="name1" label="" placeholder="请输入昵称" /> -->
@@ -164,7 +165,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -173,7 +174,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -182,7 +183,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -191,7 +192,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -200,7 +201,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -209,7 +210,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -218,7 +219,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -227,7 +228,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -236,7 +237,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -245,7 +246,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -254,7 +255,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -263,7 +264,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -272,7 +273,7 @@ export default {
           fansnum: 80,
           works: 110,
           date:"04-21 14:36",
-          avatar: "../../static/icon/图片/头像6.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
           avatar2: "../../static/icon/未点赞1.png",
           avatar3: "../../static/icon/点赞1.png",
           iconshow: true
@@ -344,7 +345,7 @@ export default {
   z-index: 10000;
   display: flex;
   align-items: center;
-  font-size: 0.32rem;
+  font-size: 0.42rem;
   border-bottom: 5px solid #f7f7f7;
 }
 .search {
@@ -352,6 +353,7 @@ export default {
   height: 100%;
   box-sizing: border-box;
   font-weight: bold;
+  font-size: 0.44rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -416,7 +418,7 @@ export default {
 }
 .main > div {
   width: 100%;
-  height: 1.2rem;
+  height: 1.8rem;
   box-sizing: border-box;
   /* border-bottom: 1px solid #ccc; */
   /* display: flex;
@@ -453,7 +455,7 @@ export default {
 }
 .my_icon {
   width: 1rem;
-  height: 1rem;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -463,14 +465,14 @@ export default {
   float: right;
 }
 .my_pic {
-  width: 1rem;
+  width: 2rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .usermsg {
-  width: 5rem;
+  width: 7rem;
   height: 100%;
   display: flex;
   align-items: center;

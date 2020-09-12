@@ -581,9 +581,9 @@ export default {
   /* flex-direction: column; */
   /* width: 4.75rem; */
   height: 5.2rem;
-  min-width: 4.75rem;
+  min-width: 4.975rem;
   padding: 0.15rem 0.05rem;
-  max-width: 4.75rem;
+  max-width: 4.975rem;
   flex-wrap: wrap;
   /* align-items:flex-start; */
   justify-content: center;
