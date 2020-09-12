@@ -5,7 +5,7 @@ switch (process.env.NODE_ENV) {
     BASEURL = "/api"; //开发环境url
     break;
   case "production":
-    BASEURL = "http://plt.yiyiny.com/api"; //生产环境url
+    BASEURL = "http://plt.dev.yiyiny.com/api"; //生产环境url
     break;
 }
 
