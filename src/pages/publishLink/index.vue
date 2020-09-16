@@ -3,7 +3,7 @@
     
     <div class="addPop">
       <div class="progress">
-        <img src="@/static/img/jindu-logo.png" alt="">
+        <img src="@/static/img/jindu-logo2.png" alt="">
         <div class="hint">生成画廊中...</div>
         <van-progress
           :percentage="nuw"

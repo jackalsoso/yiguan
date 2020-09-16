@@ -1,0 +1,57 @@
+<krpano>
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+			calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+    </action>
+	
+	<action name="click_hotspot">
+		set(hotspot_name,%1);
+		copy(scene_name,xml.scene);
+		txtsplit(get(scene_name), '_', scene_arr);
+
+		txtsplit(get(hotspot_name),"_",hotspot_arr);
+
+		for(set(i,0), i LT calc(scene_arr.count-1), inc(i),
+		  txtadd(target_scene_name,get(scene_arr[get(i)].value),"_");
+		);
+
+		txtadd(target_scene_name,get(hotspot_arr[calc(hotspot_arr.count-1)].value));
+
+		load_scene(get(target_scene_name));
+	</action>
+
+	<!--action name="hotspot_click">
+		set(hotspot_name,%1);
+		jscall(calc("hotspot_click('"+hotspot_name+"')"));
+	</action-->
+
+	<action name="load_scene">
+		set(scene_name,%1);
+		loadscene(get(scene_name), NULL, MERGE,"BLEND(1.0, easeInCubic)");
+	</action>
+
+	<action name="onloadscene">
+		jscall(calc("load_hotspot_info('"+xml.scene+"')"));
+	</action>
+
+	<events name="webvr_events" keep="true" devices="html5"
+	        onnewscene="onloadscene"
+	        />
+</krpano>

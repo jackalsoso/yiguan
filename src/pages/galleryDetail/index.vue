@@ -2,13 +2,8 @@
   <div class="content">
     <div class="search-warp">
       <div class="search">
-        <img
-          class="back"
-          src="@/static/img/back-icon2.png"
-          alt=""
-          @click="$router.back(-1)"
-        />
-        <img
+        <img class="back" src="@/static/img/back-icon2.png" alt @click="$router.back(-1)" />
+        <!-- <img
           class="qiu"
           src="@/static/img/3D.png"
           alt=""
@@ -21,26 +16,38 @@
           alt=""
           v-show="isThree"
           @click="change3D"
-        />
-        <span class="upload" @click="$router.push('/upload')">上传画作</span>
+        />-->
+        <span class="upload" @click="$router.push({name:'upload',params:{fengge:radio,bizhi:checkIndex}})">上传画作</span>
       </div>
     </div>
-    <webgl
+    <!-- <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
-    ></webgl>
+    ></webgl>-->
+    <iframe
+      style="width: 100%; height: 100%;position: absolute;top:0; z-index: 1000;"
+      name="iframeMap"
+      id="iframeMapViewComponent"
+      v-bind:src="getPageUrl"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      scrolling="no"
+      ref="iframeDom"
+    ></iframe>
     <div class="popup-bottom animated fadeInUp">
       <div class="pop-type">
         <div class="tit" @click="(isShowHk = !isShowHk), (isShowBz = false)">
-          <span></span><span></span>
+          <span></span>
+          <span></span>
         </div>
         <div class="type">画框类别</div>
         <div class="choose" v-if="isShowHk">
           <label>画框类型:</label>
           <van-radio-group v-model="radio" direction="horizontal">
-            <van-radio name="1">欧式</van-radio>
-            <van-radio name="2">中式</van-radio>
-            <van-radio name="3">极简</van-radio>
+            <van-radio name="1" @click="radio == '1'">欧式</van-radio>
+            <van-radio name="2" @click="radio == '2'">中式</van-radio>
+            <van-radio name="3" @click="radio == '3'">极简</van-radio>
           </van-radio-group>
         </div>
       </div>
@@ -48,11 +55,7 @@
         <div class="tit" @click="isShowBz = true">壁纸</div>
         <div class="backdrop" v-if="isShowBz">
           <span v-for="(v, i) in 4" :key="v" @click="choose(i)">
-            <img
-              src="@/static/img/gouxuan.png"
-              alt=""
-              v-show="checkIndex == i"
-            />
+            <img src="@/static/img/gouxuan.png" alt v-show="checkIndex == i" />
           </span>
         </div>
       </div>
@@ -60,11 +63,11 @@
   </div>
 </template>
 <script>
-import webgl from "../webgl/index";
+// import webgl from "../webgl/index";
 export default {
   name: "galleryDetail",
   components: {
-    webgl,
+    // webgl,
   },
   data() {
     return {
@@ -74,20 +77,31 @@ export default {
       isShowBz: false,
       gouH: 0,
       isThree: false,
+      getPageUrl: "/gallery/tour.html",
     };
   },
-  created() {},
-  mounted(){
+  created() {
+    // 初始化时为window绑定一个方法
+    window["vueDefinedMyProp"] = (receiveParams) => {
+      this.receiveParamsFromHtml(receiveParams);
+    };
+  },
+  mounted() {
     // this.$refs.webgl.load_scene('')
   },
   methods: {
+    // 初始化时为window绑定一个方法
+    receiveParamsFromHtml(res) {
+      console.log(res);
+    },
     choose(i) {
       this.checkIndex = i;
+      console.log(this.radio)
     },
-    change3D(){
-      this.isThree = !this.isThree
-      this.$refs.webgl.switch_camera()
-    }
+    change3D() {
+      this.isThree = !this.isThree;
+      this.$refs.webgl.switch_camera();
+    },
   },
 };
 </script>
@@ -215,16 +229,16 @@ export default {
     }
   }
 }
-.backdrop span:nth-child(1){
-     background: #D4D1CC;
+.backdrop span:nth-child(1) {
+  background: #d4d1cc;
 }
-.backdrop span:nth-child(2){
-     background: #BAB1A8;
+.backdrop span:nth-child(2) {
+  background: #bab1a8;
 }
-.backdrop span:nth-child(3){
-     background: #BCC1BB;
+.backdrop span:nth-child(3) {
+  background: #bcc1bb;
 }
-.backdrop span:nth-child(4){
-     background: #BABEC1;
+.backdrop span:nth-child(4) {
+  background: #babec1;
 }
 </style>
