@@ -1,11 +1,11 @@
 <template>
   <div class="content">
     <div class="center">
-      <img class="start" src="@/static/img/start-img.png" alt="" />
-      <span>打开乙观&nbsp;&nbsp;&nbsp;发现美好</span>
-      <div class="yl" :class="tab == 0 ? 'active' : ''" @click="tab = 0">
+      <img class="start" src="@/static/img/start-img2.png" alt="" />
+      <span>打开展览馆&nbsp;&nbsp;&nbsp;发现美好</span>
+      <!-- <div class="yl" :class="tab == 0 ? 'active' : ''" @click="tab = 0">
         游览
-      </div>
+      </div> -->
       <div class="yl cz" :class="tab == 1 ? 'active' : ''" @click="tab = 1">
         自由创作
       </div>

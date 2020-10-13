@@ -111,7 +111,7 @@
     <!-- 确认上传 -->
     <div class="addPop" v-if="isShowProgress == true">
       <div class="progress" @click="$router.push('/showGallery')">
-        <img src="@/static/img/jindu-logo.png" alt="" />
+        <img src="@/static/img/jindu-logo2.png" alt="" />
         <div class="hint">作品上传中...</div>
         <van-progress :percentage="nuw" :show-pivot="true" color="#F2630D" />
       </div>
@@ -140,6 +140,12 @@ export default {
     };
   },
   created() {},
+  mounted(){
+    console.log(this.$route.params.fengge)
+    console.log(this.$route.params.bizhi)
+    // this.$route.params.fengge
+    // this.$route.params.bizhi
+  },
   methods: {
     // 打开添加弹窗
     addImg() {

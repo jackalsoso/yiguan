@@ -2,6 +2,7 @@
   <div class="content">
     <div class="top">
       <img
+      style="width:0.3rem"
         class="back"
         src="../../static/icon/返回箭头--黑色.png"
         alt=""
@@ -21,15 +22,15 @@
               <img
                 :src="userInfo.avatar"
                 alt="你的头像"
-                style="width: 1rem;height: 1rem;border-radius: 1rem;"
+                style="width: 1.5rem;height: 1.5rem;border-radius: 1rem;"
                 class="animated rotateIn"
               />
             </div>
             <div class="msg_all">
-              <p style="height:50%;font-size: 0.34rem;font-weight: bold;">
+              <p style="height:50%;font-size: 0.4rem;font-weight: bold;line-height:0.8rem">
                 {{ userInfo.name }}
               </p>
-              <p style="height:50%;">
+              <p style="height:50%;font-size: 0.32rem;">
                 <span>作品 {{ userInfo.works }}</span
                 ><span>粉丝 {{ userInfo.fansnum }}</span>
               </p>
@@ -148,110 +149,103 @@ export default {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
+          iconshow: true,
+        },
+
+        {
+          name: "作者昵称",
+          fansnum: 80,
+          works: 110,
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
         {
           name: "作者昵称",
           fansnum: 80,
           works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
+          avatar: require("../../static/icon/图片/头像6.png"),
+          avatar2: require("../../static/icon/未点赞1.png"),
+          avatar3: require("../../static/icon/点赞1.png"),
           iconshow: true,
         },
-        {
-          name: "作者昵称",
-          fansnum: 80,
-          works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
-          iconshow: true,
-        },
-        {
-          name: "作者昵称",
-          fansnum: 80,
-          works: 110,
-          avatar: "../../static/icon/图片/头像6.png",
-          avatar2: "../../static/icon/未点赞1.png",
-          avatar3: "../../static/icon/点赞1.png",
-          iconshow: true,
-        }
+        
       ]
     };
   },
@@ -317,6 +311,7 @@ export default {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  font-size: 0.44rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -381,7 +376,7 @@ export default {
 }
 .main > div {
   width: 100%;
-  height: 1.2rem;
+  height: 1.8rem;
   box-sizing: border-box;
   /* border-bottom: 1px solid #ccc; */
   /* display: flex;
@@ -428,14 +423,14 @@ export default {
   float: right;
 }
 .my_pic {
-  width: 1rem;
+  width: 2rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .usermsg {
-  width: 5rem;
+  width: 7rem;
   height: 100%;
   display: flex;
   align-items: center;

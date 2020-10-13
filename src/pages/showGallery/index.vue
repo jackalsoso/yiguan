@@ -8,7 +8,7 @@
           alt=""
           @click="$router.back(-1)"
         />
-        <img
+        <!-- <img
           class="qiu"
           src="@/static/img/3D.png"
           alt=""
@@ -21,23 +21,34 @@
           alt=""
           v-show="isThree"
           @click="change3D"
-        />
+        /> -->
         <!-- <span class="upload" @click="$router.push('/upload')">上传画作</span> -->
         
         <span class="upload" @click="$router.push('/publishLink')"
           >生成画廊</span
         >
       </div>
-      <span class="addhk" @click="changewall1">墙纸1</span>
+      <!-- <span class="addhk" @click="changewall1">墙纸1</span>
       <span class="addhk2" @click="changewall2">墙纸2</span>
       <span class="addhk3" @click="changewall3">墙纸3</span>
-      <span class="addhk4" @click="changewall4">墙纸4</span>
+      <span class="addhk4" @click="changewall4">墙纸4</span> -->
     </div>
-    <webgl
+    <!-- <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
       :sceneLoad="addpic" :mouseClick="routerto"
-    ></webgl>
+    ></webgl> -->
+    <iframe
+      style="width: 100%; height: 100%;position: absolute;top:0; z-index: 1000;"
+      name="iframeMap"
+      id="iframeMapViewComponent"
+      v-bind:src="getPageUrl"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      scrolling="no"
+      ref="iframeDom"
+    ></iframe>
   </div>
 </template>
 
@@ -55,6 +66,7 @@ export default {
   data() {
     return {
       isThree: false,
+      getPageUrl: "/gallery/tour1.html",
     };
   },
   created() {},

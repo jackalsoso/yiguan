@@ -6,16 +6,28 @@
           class="back"
           src="@/static/img/back-icon2.png"
           alt=""
-          @click="$router.push('/focusPersonal')"
+          @click="$router.push('/')"
         />
+        <!-- @click="$router.push('/focusPersonal')" -->
         <i></i>
       </div>
     </div>
-    <webgl
+    <!-- <webgl
       style="width: 100%; height: 100%; position: absolute;top:0; z-index: 1000;"
       ref="webgl"
       :sceneLoad="addpic" :mouseClick="routerto"
-    ></webgl>
+    ></webgl> -->
+    <iframe
+      style="width: 100%; height: 100%;position: absolute;top:0; z-index: 1000;"
+      name="iframeMap"
+      id="iframeMapViewComponent"
+      v-bind:src="getPageUrl"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      scrolling="no"
+      ref="iframeDom"
+    ></iframe>
     <!-- 编辑详情弹窗 -->
     <div class="anniu" @click="showPicker = true" v-if="!showPicker">
       <span></span><span></span><span></span>
@@ -73,16 +85,17 @@
 </template>
 
 <script>
-import webgl from "../webgl/index";
+// import webgl from "../webgl/index";
 export default {
   name: "showGallery",
   components: {
-    webgl,
+    // webgl,
   },
   data() {
     return {
       showPicker: false,
       isPlay: false,
+      getPageUrl: "/gallery/tour1.html",
     };
   },
   created() {},
